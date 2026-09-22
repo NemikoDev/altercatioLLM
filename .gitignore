@@ -1,0 +1,4 @@
+#MNIST
+data/
+mnist_cnn.pt
+mnist_cnn.pth
