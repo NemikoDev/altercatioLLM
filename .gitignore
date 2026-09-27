@@ -2,3 +2,7 @@
 data/
 mnist_cnn.pt
 mnist_cnn.pth
+
+
+#Models
+/src/models/__pycache__
