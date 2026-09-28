@@ -6,3 +6,8 @@ mnist_cnn.pth
 
 #Models
 /src/models/__pycache__
+/src/models/keys.txt
+
+
+#etc
+ABSTRACTION.md

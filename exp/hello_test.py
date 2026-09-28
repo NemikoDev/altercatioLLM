@@ -16,6 +16,15 @@ def main():
     except Exception as e:
         print(e)
         
+    # Openai
+    
+    try:
+        gpt = OpenAIClient()
+        response = gpt.generate(prompt)
+        print(response.text)
+        print(f"(tokens in={response.input_tokens}, out={response.output_tokens})\n")
+    except Exception as e:
+        print(e)
 
 
 

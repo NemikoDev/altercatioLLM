@@ -3,11 +3,18 @@ from openai import OpenAI
 
 from .base import ModelClient,ModelResponse
 
-
+target = "openai"
 class OpenAIClient(ModelClient):
     def __init__(self, model_name: str = "gpt-4o", **kwargs):
         super().__init__(model_name, **kwargs)
-        api_key = os.environ.get("OPENAI_API")
+        api_key = None
+        with open("./src/models/keys.txt", "r", encoding="utf-8") as file:
+            for line in file:
+                if "=" in line:
+                    key, val = line.strip().split("=", 1)
+                    if key.strip() == target:
+                        api_key = val.strip()
+                        break
         if not api_key:
             raise ValueError("OPENAI API KEY NOT AVAILABLE")
         self.client = OpenAI(api_key=api_key)
@@ -29,7 +36,7 @@ class OpenAIClient(ModelClient):
         choice=response.choices[0]
         
         return ModelResponse(
-            text=choice.messsage.content,
+            text=choice.message.content,
             model=self.model_name,
             input_token=response.usage.prompt_tokens,
             output_token=response.usage.completion_tokens,

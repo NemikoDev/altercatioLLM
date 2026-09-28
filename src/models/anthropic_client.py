@@ -1,12 +1,30 @@
 import os
+import sys
 import anthropic
 
 from .base import ModelResponse, ModelClient
 
+# Claude likes using emojis too much
+if sys.stdout and sys.stdout.encoding.lower() != "utf-8":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except AttributeError:
+        pass
+
+target = "anthropic"
 class AnthropicClient(ModelClient):
     def __init__(self, model_name: str= "claude-sonnet-4-6", **kwargs):
         super().__init__(model_name, **kwargs)
-        api_key = os.environ.get("ANTHROPIC_API")
+        api_key = None
+        with open("./src/models/keys.txt", "r", encoding="utf-8") as file:
+            for line in file:
+                if "=" in line:
+                    key, val = line.strip().split("=", 1)
+            
+                    if key.strip() == target:
+                        api_key = val.strip()
+                        break
         if not api_key:
             raise ValueError("ANTHROPIC API KEY NO AVAILABLE")
         self.client = anthropic.Anthropic(api_key=api_key)
@@ -15,7 +33,6 @@ class AnthropicClient(ModelClient):
         kwargs = {
             "model": self.model_name,
             "max_tokens": self.max_tokens,
-            "temperature": self.temperature,
             "messages": [{"role": "user", "content": prompt}]
         }
         
