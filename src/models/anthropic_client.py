@@ -1,8 +1,8 @@
-import os
 import sys
 import anthropic
+from typing import Union
 
-from .base import ModelResponse, ModelClient
+from .base import ChatMessages, ModelResponse, ModelClient
 
 # Claude likes using emojis too much
 if sys.stdout and sys.stdout.encoding.lower() != "utf-8":
@@ -29,11 +29,11 @@ class AnthropicClient(ModelClient):
             raise ValueError("ANTHROPIC API KEY NO AVAILABLE")
         self.client = anthropic.Anthropic(api_key=api_key)
     
-    def generate(self, prompt: str, system: str | None = None) -> ModelResponse:
+    def generate(self, messages: Union[str, ChatMessages], system: str | None = None) -> ModelResponse:
         kwargs = {
             "model": self.model_name,
             "max_tokens": self.max_tokens,
-            "messages": [{"role": "user", "content": prompt}]
+            "messages": self._normalize(messages),
         }
         
         if system:

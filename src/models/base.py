@@ -1,7 +1,10 @@
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+from typing import Dict, List, Union
 
 """abstract interface client for models"""
+
+ChatMessages = List[Dict[str, str]]
 
 @dataclass
 class ModelResponse:
@@ -17,6 +20,12 @@ class ModelClient(ABC):
         self.model_name = model_name
         self.temperature = temperature
         self.max_tokens = max_tokens
+        
+    @staticmethod
+    def _normalize(messages: Union[str, ChatMessages]) -> ChatMessages:
+        if isinstance(messages, str):
+            return [{"role": "user", "content": messages}]
+        return messages
         
     @abstractmethod
     def generate(self, prompt: str, system: str | None = None) -> ModelResponse:

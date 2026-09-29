@@ -1,7 +1,6 @@
-import os
 from openai import OpenAI
-
-from .base import ModelClient,ModelResponse
+from typing import Union
+from .base import ChatMessages, ModelClient, ModelResponse
 
 target = "openai"
 class OpenAIClient(ModelClient):
@@ -19,18 +18,18 @@ class OpenAIClient(ModelClient):
             raise ValueError("OPENAI API KEY NOT AVAILABLE")
         self.client = OpenAI(api_key=api_key)
         
-    def generate(self, prompt: str, system: str | None = None) -> ModelResponse:
-        messages = []
+    def generate(self,  messages: Union[str, ChatMessages], system: str | None = None) -> ModelResponse:
+        chat = []
         
         if system:
-            messages.append({"role": "system", "content": system})
-        messages.append({"role": "user", "content": prompt})
+            chat.append({"role": "system", "content": system})
+        chat.extend(self._normalize(messages))
         
         response = self.client.chat.completions.create(
             model=self.model_name,
             temperature=self.temperature,
             max_tokens=self.max_tokens,
-            messages=messages,
+            messages=chat,
         )
         
         choice=response.choices[0]
