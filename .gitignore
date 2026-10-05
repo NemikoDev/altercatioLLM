@@ -7,7 +7,7 @@ mnist_cnn.pth
 #Models
 /src/models/__pycache__
 /src/models/keys.txt
-
+/src/models/agents/__pycache__
 
 #etc
 ABSTRACTION.md
