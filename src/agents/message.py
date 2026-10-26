@@ -1,4 +1,5 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from typing import Dict, Any
 
 
 
@@ -6,3 +7,4 @@ from dataclasses import dataclass
 class Message:
     speaker: str
     content: str
+    metadata: Dict[str, Any] = field(default_factory=dict)
