@@ -48,4 +48,4 @@ class Agent:
         if text.startswith(prefix):
             text = text[len(prefix):].strip()
 
-        return Message(speaker=self.name, content=text)
+        return Message(speaker=self.name, content=text, metadata={"model": response.model, "input_tokens": response.input_tokens, "output_tokens": response.output_tokens})

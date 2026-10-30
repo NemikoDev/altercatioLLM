@@ -16,6 +16,10 @@ class AdaptiveDebate(Algorithm):
         self.min_turns = min_rounds
         self.max_turns = max_rounds
         self._agreed = False
+        
+        
+    def reset(self) -> None:
+        self._agreed = False
 
     def select_next_speaker(self, transcript: List[Message], agents: List[Agent], turn: int) -> Agent:
         return agents[turn % len(agents)]

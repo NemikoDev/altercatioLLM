@@ -17,5 +17,11 @@ class Algorithm(ABC):
     def should_terminate(self, transcript: List[Message], turn: int) -> bool:
         raise NotImplementedError
     
+    def visible_transcript(self, transcript: List[Message], agent: Agent, turn: int) -> List[Message]:
+        return transcript
+    
+    def observe(self, message: Message) -> Message:
+        return message
+    
     def observe(self, message: Message) -> Message:
         return message
