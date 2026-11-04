@@ -10,8 +10,8 @@ ChatMessages = List[Dict[str, str]]
 class ModelResponse:
     text:str
     model:str
-    input_token:int | None = None
-    output_token:int | None = None
+    input_tokens:int | None = None
+    output_tokens:int | None = None
     raw: dict | None = None
     
 

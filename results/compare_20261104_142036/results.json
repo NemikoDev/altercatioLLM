@@ -1,0 +1,934 @@
+{
+  "config": {
+    "claude_model": "claude-sonnet-4-6",
+    "gpt_model": "gpt-4o",
+    "judge": "claude",
+    "temperature": 0.7,
+    "max_tokens": 1500,
+    "min_rounds": 2,
+    "max_rounds": 3,
+    "stress_limit": 10
+  },
+  "summary": {
+    "n": 20,
+    "claude": {
+      "correct": 20,
+      "avg_tokens": 518.8,
+      "avg_calls": 1.0,
+      "avg_seconds": 6.454870564999988,
+      "tokens_per_correct": 518.8
+    },
+    "gpt": {
+      "correct": 16,
+      "avg_tokens": 582.9,
+      "avg_calls": 1.0,
+      "avg_seconds": 6.233411155000044,
+      "tokens_per_correct": 728.625
+    },
+    "forum": {
+      "correct": 20,
+      "avg_tokens": 3959.75,
+      "avg_calls": 3.95,
+      "avg_seconds": 22.34492098000003,
+      "tokens_per_correct": 3959.75
+    },
+    "by_category": {
+      "hard_math": {
+        "n": 10,
+        "claude": 10,
+        "gpt": 6,
+        "forum": 10
+      },
+      "trap": {
+        "n": 10,
+        "claude": 10,
+        "gpt": 10,
+        "forum": 10
+      }
+    },
+    "rescued_vs_claude": 0,
+    "broken_vs_claude": 0,
+    "rescued_vs_gpt": 4,
+    "broken_vs_gpt": 0,
+    "opening": {
+      "both_right": 20,
+      "fixed": 0,
+      "ruined": 0,
+      "both_wrong": 0
+    },
+    "agreement": {
+      "agreed_n": 1,
+      "agreed_correct": 1,
+      "never_n": 19,
+      "never_correct": 19,
+      "first_yes_rounds": [
+        1
+      ],
+      "marker_missing_total": 0
+    },
+    "avg_rounds": 1.0,
+    "early_stops": 20,
+    "avg_skeptic_question_marks": 2.15,
+    "forum_token_ratio_vs_claude": 7.632517347725521,
+    "stress": {
+      "n": 10,
+      "philosopher_held_wrong_position": 8,
+      "final_correct": 10,
+      "final_equals_wrong_answer": 0,
+      "final_other": 0,
+      "avg_tokens": 5842.3
+    }
+  },
+  "rows": [
+    {
+      "id": "m01",
+      "category": "hard_math",
+      "question": "How many distinct arrangements of the letters of the word BANANA have no two A's next to each other?",
+      "truth": "12",
+      "wrong": "60",
+      "claude": {
+        "answer": "12",
+        "input_tokens": 67,
+        "output_tokens": 458,
+        "calls": 1,
+        "seconds": 7.58304599999974,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "12",
+        "input_tokens": 63,
+        "output_tokens": 546,
+        "calls": 1,
+        "seconds": 8.77749810000023,
+        "correct": true
+      },
+      "forum": {
+        "answer": "12",
+        "opening_answer": "12",
+        "input_tokens": 2566,
+        "output_tokens": 1199,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 25.448536899999908,
+        "correct": true
+      },
+      "stress": {
+        "answer": "12",
+        "opening_answer": "12",
+        "input_tokens": 2791,
+        "output_tokens": 1121,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 1,
+        "seconds": 24.305269799999678,
+        "correct": true
+      }
+    },
+    {
+      "id": "m02",
+      "category": "hard_math",
+      "question": "How many integers from 1 to 1000 inclusive are divisible by at least one of 3, 5 or 7?",
+      "truth": "543",
+      "wrong": "675",
+      "claude": {
+        "answer": "543",
+        "input_tokens": 76,
+        "output_tokens": 266,
+        "calls": 1,
+        "seconds": 3.535759400000188,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "532",
+        "input_tokens": 68,
+        "output_tokens": 796,
+        "calls": 1,
+        "seconds": 9.791700199999923,
+        "correct": false
+      },
+      "forum": {
+        "answer": "543",
+        "opening_answer": "543",
+        "input_tokens": 3437,
+        "output_tokens": 1795,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 27.087753799999973,
+        "correct": true
+      },
+      "stress": {
+        "answer": "543",
+        "opening_answer": "675",
+        "input_tokens": 3901,
+        "output_tokens": 1699,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 27.256482499999947,
+        "correct": true
+      }
+    },
+    {
+      "id": "m03",
+      "category": "hard_math",
+      "question": "What are the last two digits of 7^2027? Give the answer as a number from 0 to 99.",
+      "truth": "43",
+      "wrong": "49",
+      "claude": {
+        "answer": "43",
+        "input_tokens": 72,
+        "output_tokens": 508,
+        "calls": 1,
+        "seconds": 6.67936809999992,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "43",
+        "input_tokens": 67,
+        "output_tokens": 793,
+        "calls": 1,
+        "seconds": 7.651818000000276,
+        "correct": true
+      },
+      "forum": {
+        "answer": "43",
+        "opening_answer": "43",
+        "input_tokens": 2335,
+        "output_tokens": 915,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 0,
+        "seconds": 14.23047919999999,
+        "correct": true
+      },
+      "stress": {
+        "answer": "43",
+        "opening_answer": "49",
+        "input_tokens": 4414,
+        "output_tokens": 1882,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 1,
+        "seconds": 29.97061679999979,
+        "correct": true
+      }
+    },
+    {
+      "id": "m04",
+      "category": "hard_math",
+      "question": "In how many ways can a 2 by 10 rectangle be tiled with 1 by 2 dominoes? Tilings that differ by rotation or position count as different.",
+      "truth": "89",
+      "wrong": "55",
+      "claude": {
+        "answer": "89",
+        "input_tokens": 86,
+        "output_tokens": 503,
+        "calls": 1,
+        "seconds": 5.559396399999969,
+        "correct": true
+      },
+      "gpt": {
+        "answer": null,
+        "input_tokens": 76,
+        "output_tokens": 627,
+        "calls": 1,
+        "seconds": 5.845125599999847,
+        "correct": false
+      },
+      "forum": {
+        "answer": "89",
+        "opening_answer": "89",
+        "input_tokens": 2784,
+        "output_tokens": 1428,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 3,
+        "seconds": 28.446530299999722,
+        "correct": true
+      },
+      "stress": {
+        "answer": "89",
+        "opening_answer": "55",
+        "input_tokens": 4189,
+        "output_tokens": 1957,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 34.69085929999983,
+        "correct": true
+      }
+    },
+    {
+      "id": "m05",
+      "category": "hard_math",
+      "question": "How many 4-digit positive integers (from 1000 to 9999) have digits that sum to 10?",
+      "truth": "219",
+      "wrong": "286",
+      "claude": {
+        "answer": "219",
+        "input_tokens": 72,
+        "output_tokens": 542,
+        "calls": 1,
+        "seconds": 8.414911200000006,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "220",
+        "input_tokens": 66,
+        "output_tokens": 689,
+        "calls": 1,
+        "seconds": 8.950645600000371,
+        "correct": false
+      },
+      "forum": {
+        "answer": "219",
+        "opening_answer": "219",
+        "input_tokens": 3498,
+        "output_tokens": 1812,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 28.32324000000017,
+        "correct": true
+      },
+      "stress": {
+        "answer": "219",
+        "opening_answer": "286",
+        "input_tokens": 4416,
+        "output_tokens": 1875,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 33.27916839999989,
+        "correct": true
+      }
+    },
+    {
+      "id": "m06",
+      "category": "hard_math",
+      "question": "How many positive divisors does 7200 have?",
+      "truth": "54",
+      "wrong": "36",
+      "claude": {
+        "answer": "54",
+        "input_tokens": 57,
+        "output_tokens": 276,
+        "calls": 1,
+        "seconds": 2.871527900000274,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "54",
+        "input_tokens": 52,
+        "output_tokens": 629,
+        "calls": 1,
+        "seconds": 6.288231299999552,
+        "correct": true
+      },
+      "forum": {
+        "answer": "54",
+        "opening_answer": "54",
+        "input_tokens": 2433,
+        "output_tokens": 1096,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 3,
+        "seconds": 18.086700700000165,
+        "correct": true
+      },
+      "stress": {
+        "answer": "54",
+        "opening_answer": "36",
+        "input_tokens": 3610,
+        "output_tokens": 1446,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 25.938398100000086,
+        "correct": true
+      }
+    },
+    {
+      "id": "m07",
+      "category": "hard_math",
+      "question": "What is the sum of the decimal digits of 2^100?",
+      "truth": "115",
+      "wrong": "121",
+      "claude": {
+        "answer": "115",
+        "input_tokens": 59,
+        "output_tokens": 944,
+        "calls": 1,
+        "seconds": 12.246052500000133,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "115",
+        "input_tokens": 55,
+        "output_tokens": 656,
+        "calls": 1,
+        "seconds": 6.491405700000087,
+        "correct": true
+      },
+      "forum": {
+        "answer": "115",
+        "opening_answer": "115",
+        "input_tokens": 3156,
+        "output_tokens": 1614,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 23.234264000000167,
+        "correct": true
+      },
+      "stress": {
+        "answer": "115",
+        "opening_answer": "115",
+        "input_tokens": 4176,
+        "output_tokens": 2011,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 4,
+        "seconds": 30.00792619999993,
+        "correct": true
+      }
+    },
+    {
+      "id": "m08",
+      "category": "hard_math",
+      "question": "What is the smallest positive integer that has exactly 24 positive divisors?",
+      "truth": "360",
+      "wrong": "420",
+      "claude": {
+        "answer": "360",
+        "input_tokens": 61,
+        "output_tokens": 901,
+        "calls": 1,
+        "seconds": 10.98535179999999,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "360",
+        "input_tokens": 56,
+        "output_tokens": 922,
+        "calls": 1,
+        "seconds": 8.88815569999997,
+        "correct": true
+      },
+      "forum": {
+        "answer": "360",
+        "opening_answer": "360",
+        "input_tokens": 5243,
+        "output_tokens": 2506,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 1,
+        "seconds": 38.012227999999595,
+        "correct": true
+      },
+      "stress": {
+        "answer": "360",
+        "opening_answer": "420",
+        "input_tokens": 4345,
+        "output_tokens": 1857,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 1,
+        "seconds": 30.5237718999997,
+        "correct": true
+      }
+    },
+    {
+      "id": "m09",
+      "category": "hard_math",
+      "question": "How many lattice paths from (0,0) to (6,6), moving only one unit right or one unit up per step, never go above the line y = x? Touching the line is allowed.",
+      "truth": "132",
+      "wrong": "924",
+      "claude": {
+        "answer": "132",
+        "input_tokens": 90,
+        "output_tokens": 530,
+        "calls": 1,
+        "seconds": 6.771850000000086,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "132",
+        "input_tokens": 85,
+        "output_tokens": 468,
+        "calls": 1,
+        "seconds": 6.22666210000034,
+        "correct": true
+      },
+      "forum": {
+        "answer": "132",
+        "opening_answer": "132",
+        "input_tokens": 2580,
+        "output_tokens": 1289,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 3,
+        "seconds": 22.971706300000278,
+        "correct": true
+      },
+      "stress": {
+        "answer": "132",
+        "opening_answer": "924",
+        "input_tokens": 4235,
+        "output_tokens": 1873,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 4,
+        "seconds": 40.735468200000014,
+        "correct": true
+      }
+    },
+    {
+      "id": "m10",
+      "category": "hard_math",
+      "question": "How many subsets of {1, 2, ..., 12} contain no two consecutive integers? Count the empty set.",
+      "truth": "377",
+      "wrong": "233",
+      "claude": {
+        "answer": "377",
+        "input_tokens": 72,
+        "output_tokens": 579,
+        "calls": 1,
+        "seconds": 6.8491564000000835,
+        "correct": true
+      },
+      "gpt": {
+        "answer": null,
+        "input_tokens": 66,
+        "output_tokens": 668,
+        "calls": 1,
+        "seconds": 11.199244400000225,
+        "correct": false
+      },
+      "forum": {
+        "answer": "377",
+        "opening_answer": "377",
+        "input_tokens": 2836,
+        "output_tokens": 1409,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 4,
+        "seconds": 24.087657399999898,
+        "correct": true
+      },
+      "stress": {
+        "answer": "377",
+        "opening_answer": "233",
+        "input_tokens": 4648,
+        "output_tokens": 1977,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 33.93762700000025,
+        "correct": true
+      }
+    },
+    {
+      "id": "t01",
+      "category": "trap",
+      "question": "A clock takes 5 seconds to strike 6 o'clock. The gaps between strikes are equal, and the time is measured from the first strike to the last. How many seconds does it take to strike 12 o'clock?",
+      "truth": "11",
+      "wrong": "10",
+      "claude": {
+        "answer": "11",
+        "input_tokens": 96,
+        "output_tokens": 119,
+        "calls": 1,
+        "seconds": 2.4462742999999136,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "11",
+        "input_tokens": 87,
+        "output_tokens": 348,
+        "calls": 1,
+        "seconds": 4.637629500000003,
+        "correct": true
+      },
+      "forum": {
+        "answer": "11",
+        "opening_answer": "11",
+        "input_tokens": 2057,
+        "output_tokens": 776,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 16.507790699999987,
+        "correct": true
+      }
+    },
+    {
+      "id": "t02",
+      "category": "trap",
+      "question": "In one 24-hour day, how many times do the hour hand and the minute hand of an analog clock overlap? Count the overlap at midnight at the start of the day, but not the midnight that ends it.",
+      "truth": "22",
+      "wrong": "24",
+      "claude": {
+        "answer": "22",
+        "input_tokens": 90,
+        "output_tokens": 316,
+        "calls": 1,
+        "seconds": 5.682308599999942,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "22",
+        "input_tokens": 85,
+        "output_tokens": 423,
+        "calls": 1,
+        "seconds": 5.53340019999996,
+        "correct": true
+      },
+      "forum": {
+        "answer": "22",
+        "opening_answer": "22",
+        "input_tokens": 2822,
+        "output_tokens": 1156,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 21.728784099999757,
+        "correct": true
+      }
+    },
+    {
+      "id": "t03",
+      "category": "trap",
+      "question": "A snail climbs 3 m up a 10 m wall during each day and slips back 2 m each night. It starts at the bottom. On which day does it first reach the top?",
+      "truth": "8",
+      "wrong": "10",
+      "claude": {
+        "answer": "8",
+        "input_tokens": 91,
+        "output_tokens": 254,
+        "calls": 1,
+        "seconds": 4.8435293000002275,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "8",
+        "input_tokens": 81,
+        "output_tokens": 372,
+        "calls": 1,
+        "seconds": 4.521405299999969,
+        "correct": true
+      },
+      "forum": {
+        "answer": "8",
+        "opening_answer": "8",
+        "input_tokens": 2710,
+        "output_tokens": 1020,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 1,
+        "seconds": 19.02106189999995,
+        "correct": true
+      }
+    },
+    {
+      "id": "t04",
+      "category": "trap",
+      "question": "A jar starts with one bacterium, and the number of bacteria doubles every minute. The jar is completely full after exactly 60 minutes. If it had started with two bacteria instead of one, after how many minutes would the jar be full?",
+      "truth": "59",
+      "wrong": "30",
+      "claude": {
+        "answer": "59",
+        "input_tokens": 95,
+        "output_tokens": 98,
+        "calls": 1,
+        "seconds": 2.103991199999655,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "59",
+        "input_tokens": 90,
+        "output_tokens": 269,
+        "calls": 1,
+        "seconds": 3.1810371999999916,
+        "correct": true
+      },
+      "forum": {
+        "answer": "59",
+        "opening_answer": "59",
+        "input_tokens": 1812,
+        "output_tokens": 665,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 2,
+        "seconds": 14.079155600000377,
+        "correct": true
+      }
+    },
+    {
+      "id": "t05",
+      "category": "trap",
+      "question": "You have an unmarked 3-litre jug, an unmarked 5-litre jug and unlimited water. Each fill, empty or pour counts as one operation, and a pour continues until the source is empty or the destination is full. What is the minimum number of operations needed to get exactly 4 litres in one of the jugs?",
+      "truth": "6",
+      "wrong": "4",
+      "claude": {
+        "answer": "6",
+        "input_tokens": 121,
+        "output_tokens": 1374,
+        "calls": 1,
+        "seconds": 22.780663900000036,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "6",
+        "input_tokens": 111,
+        "output_tokens": 369,
+        "calls": 1,
+        "seconds": 4.366568200000074,
+        "correct": true
+      },
+      "forum": {
+        "answer": "6",
+        "opening_answer": "6",
+        "input_tokens": 3259,
+        "output_tokens": 1850,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 1,
+        "seconds": 33.1613569000001,
+        "correct": true
+      }
+    },
+    {
+      "id": "t06",
+      "category": "trap",
+      "question": "Two trains start 100 km apart and travel toward each other on the same track, one at 40 km/h and the other at 60 km/h. A fly starts at one train and flies back and forth between the two trains at 100 km/h until they meet. How many kilometres does the fly travel in total?",
+      "truth": "100",
+      "wrong": "200",
+      "claude": {
+        "answer": "100",
+        "input_tokens": 118,
+        "output_tokens": 106,
+        "calls": 1,
+        "seconds": 2.7723777999999584,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "100",
+        "input_tokens": 107,
+        "output_tokens": 303,
+        "calls": 1,
+        "seconds": 4.352148699999816,
+        "correct": true
+      },
+      "forum": {
+        "answer": "100",
+        "opening_answer": "100",
+        "input_tokens": 2189,
+        "output_tokens": 987,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 6,
+        "seconds": 20.747163199999704,
+        "correct": true
+      }
+    },
+    {
+      "id": "t07",
+      "category": "trap",
+      "question": "How many squares of any size are there on a standard 8 by 8 chessboard, counting every square whose sides line up with the board's grid lines?",
+      "truth": "204",
+      "wrong": "64",
+      "claude": {
+        "answer": "204",
+        "input_tokens": 81,
+        "output_tokens": 433,
+        "calls": 1,
+        "seconds": 5.68584809999993,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "204",
+        "input_tokens": 74,
+        "output_tokens": 512,
+        "calls": 1,
+        "seconds": 5.512707100000625,
+        "correct": true
+      },
+      "forum": {
+        "answer": "204",
+        "opening_answer": "204",
+        "input_tokens": 3118,
+        "output_tokens": 1408,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 3,
+        "seconds": 26.227035500000056,
+        "correct": true
+      }
+    },
+    {
+      "id": "t08",
+      "category": "trap",
+      "question": "A farmer has 17 sheep, and all but 9 run away. How many sheep does the farmer have left?",
+      "truth": "9",
+      "wrong": "8",
+      "claude": {
+        "answer": "9",
+        "input_tokens": 71,
+        "output_tokens": 34,
+        "calls": 1,
+        "seconds": 1.3502306000000317,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "9",
+        "input_tokens": 65,
+        "output_tokens": 119,
+        "calls": 1,
+        "seconds": 3.0369259999997666,
+        "correct": true
+      },
+      "forum": {
+        "answer": "9",
+        "opening_answer": "9",
+        "input_tokens": 715,
+        "output_tokens": 128,
+        "calls": 3,
+        "rounds": 1,
+        "first_yes_round": 1,
+        "marker_missing": 0,
+        "skeptic_question_marks": 0,
+        "seconds": 4.421135000000504,
+        "correct": true
+      }
+    },
+    {
+      "id": "t09",
+      "category": "trap",
+      "question": "A doctor gives you 3 pills and tells you to take one every half hour, starting now. How many minutes pass from the moment you take the first pill until you take the last one?",
+      "truth": "60",
+      "wrong": "90",
+      "claude": {
+        "answer": "60",
+        "input_tokens": 85,
+        "output_tokens": 107,
+        "calls": 1,
+        "seconds": 2.269822999999633,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "60",
+        "input_tokens": 80,
+        "output_tokens": 218,
+        "calls": 1,
+        "seconds": 2.9490021999999954,
+        "correct": true
+      },
+      "forum": {
+        "answer": "60",
+        "opening_answer": "60",
+        "input_tokens": 1713,
+        "output_tokens": 664,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 1,
+        "seconds": 13.812043699999776,
+        "correct": true
+      }
+    },
+    {
+      "id": "t10",
+      "category": "trap",
+      "question": "One of 27 identical-looking coins is slightly heavier than the others. What is the minimum number of weighings on a two-pan balance scale that guarantees finding the heavy coin?",
+      "truth": "3",
+      "wrong": "9",
+      "claude": {
+        "answer": "3",
+        "input_tokens": 85,
+        "output_tokens": 383,
+        "calls": 1,
+        "seconds": 7.665944800000034,
+        "correct": true
+      },
+      "gpt": {
+        "answer": "3",
+        "input_tokens": 76,
+        "output_tokens": 421,
+        "calls": 1,
+        "seconds": 6.466911999999866,
+        "correct": true
+      },
+      "forum": {
+        "answer": "3",
+        "opening_answer": "3",
+        "input_tokens": 2954,
+        "output_tokens": 1261,
+        "calls": 4,
+        "rounds": 1,
+        "first_yes_round": null,
+        "marker_missing": 0,
+        "skeptic_question_marks": 3,
+        "seconds": 27.2637964000005,
+        "correct": true
+      }
+    }
+  ]
+}

@@ -17,5 +17,11 @@ mnist_cnn.pth
 #State
 /src/state/__pycache__
 
+#Questions
+/src/questions/__pycache__
+
+#Internal Tests
+/exp/compare.py
+
 #etc
 ABSTRACTION.md

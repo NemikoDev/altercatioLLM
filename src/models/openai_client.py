@@ -37,7 +37,7 @@ class OpenAIClient(ModelClient):
         return ModelResponse(
             text=choice.message.content,
             model=self.model_name,
-            input_token=response.usage.prompt_tokens,
-            output_token=response.usage.completion_tokens,
+            input_tokens=response.usage.prompt_tokens,
+            output_tokens=response.usage.completion_tokens,
             raw=response.model_dump(),
         )

@@ -11,7 +11,7 @@ def extract_answer(text: str) -> Optional[str]:
         clean = line.replace("*", "")
         m = _ANSWER_REGEX.match(clean)
         if m:
-            found = m.grou1p(1).strip()
+            found = m.group(1).strip()
     return found
 
 

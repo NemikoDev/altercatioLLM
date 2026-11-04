@@ -46,7 +46,7 @@ class AnthropicClient(ModelClient):
         return ModelResponse (
             text=text,
             model=self.model_name,
-            input_token=response.usage.input_tokens,
-            output_token=response.usage.output_tokens,
+            input_tokens=response.usage.input_tokens,
+            output_tokens=response.usage.output_tokens,
             raw=response.model_dump(),
         )
