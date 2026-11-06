@@ -5,3 +5,6 @@ A study into multi-model LLM and the effect of applying custom algorithms for ef
 
 * Compiled using Python3 version 14
 * requirements listed in **requirements.txt**
+
+
+Study found at: https://github.com/NemikoDev/altercatioLLM/blob/main/docs/study.md
